@@ -1,0 +1,5 @@
+[package]
+description = Test for ECS offload in zeek
+tags = ECS
+version = 0.10
+script_dir = scripts
