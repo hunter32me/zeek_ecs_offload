@@ -56,37 +56,7 @@ global ecs = table (["id.orig_h"] = "source.ip",
 event zeek_init()
     {
     
-
-       Log::add_filter(Conn::LOG,[$name="ecs_conn"]);
-       Log::add_filter(DNS::LOG,[$name="ecs_dns"]);
-       Log::add_filter(DHCP::LOG,[$name="ecs_dhcp"]);
-       Log::add_filter(HTTP::LOG,[$name="ecs_http"]);
-       Log::add_filter(DCE_RPC::LOG,[$name="ecs_dec_rpc"]);
-       Log::add_filter(DNP3::LOG,[$name="ecs_dnp3"]);
-       Log::add_filter(FTP::LOG,[$name="ecs_ftp"]);
-       Log::add_filter(IRC::LOG,[$name="ecs_irc"]);
-       Log::add_filter(KRB::LOG,[$name="ecs_ftp"]);
-       Log::add_filter(Modbus::LOG,[$name="ecs_modbus"]);
-#       Log::add_filter(MySQL::LOG,[$name="ecs_mysql"]);
-       Log::add_filter(NTLM::LOG,[$name="ecs_ntlm"]);
-       Log::add_filter(NTP::LOG,[$name="ecs_ntp"]);
-       Log::add_filter(RADIUS::LOG,[$name="ecs_radius"]);
-       Log::add_filter(RDP::LOG,[$name="ecs_rdp"]);
-       Log::add_filter(RFB::LOG,[$name="ecs_rfb"]);
-       Log::add_filter(SIP::LOG,[$name="ecs_sip"]);
-#       Log::add_filter(SMB::LOG,[$name="ecs_smb"]);
-       Log::add_filter(SMTP::LOG,[$name="ecs_smtp"]);
-       Log::add_filter(SNMP::LOG,[$name="ecs_snmp"]);
-       Log::add_filter(SOCKS::LOG,[$name="ecs_socks"]);
-       Log::add_filter(SSH::LOG,[$name="ecs_ssh"]);
-       Log::add_filter(SSL::LOG,[$name="ecs_ssl"]);
-       Log::add_filter(Syslog::LOG,[$name="ecs_syslog"]);
-       Log::add_filter(Tunnel::LOG,[$name="ecs_tunnel"]);
-       Log::add_filter(PE::LOG,[$name="ecs_pe"]);
-       Log::add_filter(Notice::LOG,[$name="ecs_notice"]);
-       Log::add_filter(Software::LOG,[$name="ecs_software"]);
-       
-       const conn = Log::get_filter(Conn::LOG, "ecs_conn");
+       local conn = Log::get_filter(Conn::LOG, "ecs_conn");
        conn$path = "conn_ecs";
        conn$field_name_map = ecs;
      
