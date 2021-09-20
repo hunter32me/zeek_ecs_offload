@@ -86,7 +86,7 @@ event zeek_init()
        Log::add_filter(Notice::LOG,[$name="ecs_notice"]);
        Log::add_filter(Software::LOG,[$name="ecs_software"]);
        
-       local conn = Log::get_filter(Conn::LOG, "ecs_conn");
+       global conn = Log::get_filter(Conn::LOG, "ecs_conn");
        conn$path = "conn_ecs";
        conn$field_name_map = ecs;
      
