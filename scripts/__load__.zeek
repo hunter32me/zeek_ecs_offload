@@ -1,1 +1,1 @@
-@load ./zeek_ecs_offload.zeek
+@load ./zeek_ecs.zeek
