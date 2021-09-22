@@ -53,6 +53,7 @@ redef Log::default_field_name_map = {
      ["spcap.trigger"] = "labels.corelight.spcap_trigger",
      ["spcap.url"] = "labels.corelight.spcap_url",
      ["spcap.rule"] = "labels.corelight.spcap.rule");
+}
 
 
 
