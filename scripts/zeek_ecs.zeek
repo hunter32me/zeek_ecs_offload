@@ -53,16 +53,15 @@
      ["spcap.url"] = "labels.corelight.spcap_url",
      ["spcap.rule"] = "labels.corelight.spcap.rule");
 
-     event connection_established(c:connection)
-     {
-       local conn = Log::get_filter(Conn::LOG, "conn_ecs");
-       conn$path = "conn_ecs";
-       conn$field_name_map = ecs;
-
-       conn$writer = Log::WRITER_ASCII;
-       conn$config = table(["tsv"] = "F");
-       Log::add_filter(Conn::LOG,conn );
-     }
+ 
+       event zeek_init()
+{
+        Log::add_filter(Conn::LOG, [
+                $name = "conn_ecs",
+                $path = "conn_ecs",
+                $field_name_map = ecs,
+        ]);
+}
 
 
 
