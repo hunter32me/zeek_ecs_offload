@@ -53,7 +53,7 @@
      ["spcap.url"] = "labels.corelight.spcap_url",
      ["spcap.rule"] = "labels.corelight.spcap.rule");
 
-     event zeek_init ()
+     event connection_established(c:connection)
      {
        local conn = Log::get_filter(Conn::LOG, "conn_ecs");
        conn$path = "conn_ecs";
