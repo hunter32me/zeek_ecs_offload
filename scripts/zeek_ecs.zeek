@@ -53,7 +53,7 @@ global ecs = table (["id.orig_h"] = "source.ip",
      ["spcap.url"] = "labels.corelight.spcap_url",
      ["spcap.rule"] = "labels.corelight.spcap.rule");
 
-event zeek_init()
+event ecs_setup()
     {
     
      
@@ -62,9 +62,11 @@ event zeek_init()
        conn$field_name_map = ecs;
        conn$writer = Log::WRITER_ASCII;
        conn$config = table(["tsv"] = "F");
-       
-       
-       
        Log::add_filter(Conn::LOG,conn);
 
        }
+
+event zeek_init()
+{
+       event ecs_setup();
+}
