@@ -54,7 +54,8 @@ redef Log::default_field_name_map = {
      ["version.minor2"] = "version_minor2",
      ["version.minor3"] = "version_minor3",
      ["version.major"] = "version_major",
-     ["version.addl"] = "version_addl"
+     ["version.addl"] = "version_addl",
+     ["version.minor"] = "version_minor"
      };
 
 
