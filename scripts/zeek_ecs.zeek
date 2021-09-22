@@ -53,8 +53,9 @@ redef Log::default_field_name_map = {
      ["spcap.rule"] = "labels.corelight.spcap.rule",
      ["version.minor2"] = "version_minor2",
      ["version.minor3"] = "version_minor3",
-     ["version.major"] = "version_major"
-};
+     ["version.major"] = "version_major",
+     ["version.addl"] = "version_addl"
+     };
 
 
  #const ecs = table (
