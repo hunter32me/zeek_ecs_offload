@@ -53,13 +53,12 @@
      ["spcap.url"] = "labels.corelight.spcap_url",
      ["spcap.rule"] = "labels.corelight.spcap.rule");
 
- 
-       event zeek_init()
+ event zeek_init()
 {
         Log::add_filter(Conn::LOG, [
                 $name = "conn_ecs",
                 $path = "conn_ecs",
-                $field_name_map = ecs,
+                $field_name_map = ecs
         ]);
 }
 
