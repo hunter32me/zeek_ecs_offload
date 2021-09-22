@@ -55,9 +55,8 @@
 
      event zeek_init ()
      {
-             {
        local conn = Log::get_filter(Conn::LOG, "conn_ecs");
-       conn$path = "conn_ecs2";
+       conn$path = "conn_ecs";
        conn$field_name_map = ecs;
 
        conn$writer = Log::WRITER_ASCII;
