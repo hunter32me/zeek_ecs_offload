@@ -38,7 +38,6 @@ redef Log::default_field_name_map = {
      ["cache_add_tx_mpg"] = "conn.cache_add_tx_mpg",
      ["cache_del_mpg"] = "conn.cache_del_mpg",
      ["cache_entries"] = "conn.cache_entries",
-     ["community_id"] = "network.community_id",
      ["corelight_shunted"] = "conn.corelight_shunted",
      ["id.orig_h_name.src"] = "conn.id.orig_h_name.src",
      ["id.orig_h_name.vals"] = "conn.id.orig_h_name.vals",
