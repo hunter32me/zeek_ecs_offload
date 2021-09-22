@@ -1,5 +1,5 @@
 
-redef Log::default_field_name_map = {
+ const ecs = table (
        ["id.orig_h"] = "source.ip",
     ["id.orig_p"] = "source.port",
     ["id.resp_h"] = "destination.host",
@@ -51,7 +51,19 @@ redef Log::default_field_name_map = {
      ["orig_cc"] = "source.geo.country_iso_code",
      ["spcap.trigger"] = "labels.corelight.spcap_trigger",
      ["spcap.url"] = "labels.corelight.spcap_url",
-     ["spcap.rule"] = "labels.corelight.spcap.rule"};
+     ["spcap.rule"] = "labels.corelight.spcap.rule");
+
+     event zeek_init ()
+     {
+             {
+       local conn = Log::get_filter(Conn::LOG, "conn_ecs");
+       conn$path = "conn_ecs2";
+       conn$field_name_map = ecs;
+
+       conn$writer = Log::WRITER_ASCII;
+       conn$config = table(["tsv"] = "F");
+       Log::add_filter(Conn::LOG,conn );
+     }
 
 
 
