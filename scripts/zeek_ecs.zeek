@@ -54,20 +54,6 @@ redef Log::default_field_name_map = {
      ["spcap.url"] = "labels.corelight.spcap_url",
      ["spcap.rule"] = "labels.corelight.spcap.rule");
 
-#event zeek_init()
- #   {
-    
-     
-  #     local conn = Log::get_filter(Conn::LOG, "conn_ecs");
-  #     conn$path = "conn_ecs";
-  #     conn$field_name_map = ecs;
-       
-  #     local dns = Log::get_filter(DNS::LOG, "dns_ecs");
-  #     dns$path = "dns_ecs";
-  #     dns$field_name_map = ecs;
 
-    #   Log::add_filter(Conn::LOG,conn);
-   #    Log::add_filter(DNS::LOG,dns);
-       }
 
 
