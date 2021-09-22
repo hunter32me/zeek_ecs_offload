@@ -7,7 +7,6 @@ redef Log::default_field_name_map = {
      ["_write_ts"] = "event.created",
      ["uid"] = "log.id.uid",
      ["_system_name"] = "observer.hostname",
-     ["community_id"] = "network.community_id",
      ["inner_vlan"] = "network.vlan.inner.id",
      ["vlan"] = "network.vlan.id",
      ["vlan_inner"] = "network.vlan.inner.id",
